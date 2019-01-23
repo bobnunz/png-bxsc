@@ -1,7 +1,6 @@
-import { HitPlayer } from './hit-player';
 
-export class HitData {
-  items: HitPlayer[];
+export class PlayerData {
+  items: any [];
   hasMore: boolean;
   limit: number;
   offset: number;

@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AgGridNg2 } from 'ag-grid-angular';
-import { HitData } from './Models/hit-data';
+import { PlayerData } from './Models/player-data';
+import { HitPlayer } from './Models/hit-player';
 import { HittersDataService } from './hitters-data.service';
 import { TabViewModule } from 'primeng/tabview';
 
@@ -17,8 +18,10 @@ export class AppComponent implements OnInit {
   @ViewChild('agGrid') agGrid: AgGridNg2;
 
   title = 'PrimeNG DataTable';
-  oracleData: HitData = new HitData;
-  tempData: HitData = new HitData;
+  //oracleData: PlayerData = new PlayerData;
+  //tempData: PlayerData = new PlayerData;
+  oracleData: HitPlayer = new HitPlayer;
+  tempData: HitPlayer = new HitPlayer;
   private defaultColDef;
   private multiSortKey;
 
@@ -45,7 +48,7 @@ export class AppComponent implements OnInit {
 
     while (this.tempData.hasMore && times < 10) {
       times += 1;
-      this.tempData = await this.hds.getHittersData(offset, limit)
+      this.tempData = await this.hds.getHittersData('H', offset, limit)
         .toPromise();
       if (offset > 0) {
         this.oracleData.items = this.oracleData.items.concat(this.tempData.items);
