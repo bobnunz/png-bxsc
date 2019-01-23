@@ -1,0 +1,3 @@
+C:\Users\bobnu\angular-apps\png-bxsc\obj\Debug\png-bxsc.njsprojAssemblyReference.cache
+C:\Users\bobnu\angular-apps\png-bxsc\obj\Debug\png-bxsc.njsproj.CoreCompileInputs.cache
+C:\Users\bobnu\angular-apps\png-bxsc\bin\Microsoft.NodejsTools.WebRole.dll

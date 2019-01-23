@@ -1,10 +1,61 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { AgGridNg2 } from 'ag-grid-angular';
+import { HitData } from './Models/hit-data';
+import { HittersDataService } from './hitters-data.service';
+import { TabViewModule } from 'primeng/tabview';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'png-bxsc';
+
+
+export class AppComponent implements OnInit {
+
+  @ViewChild('agGrid') agGrid: AgGridNg2;
+
+  title = 'PrimeNG DataTable';
+  oracleData: HitData = new HitData;
+  tempData: HitData = new HitData;
+  private defaultColDef;
+  private multiSortKey;
+
+
+  columnDefs = [
+    { headerName: 'Player', field: 'player', rowDrag: true },
+    { headerName: 'Team', field: 'team' },
+    { headerName: 'Position', field: 'pos' },
+    { headerName: 'Year', field: 'year' }
+  ];
+
+
+
+  constructor(private hds: HittersDataService) {
+    this.defaultColDef = { resizable: true, sortable: true, filter: true };
+    this.multiSortKey = 'ctrl';
+  }
+
+  async ngOnInit() {
+    this.tempData.hasMore = true;
+    let offset: number = 0;
+    let limit: number = 500;
+    let times: number = 0;
+
+    while (this.tempData.hasMore && times < 10) {
+      times += 1;
+      this.tempData = await this.hds.getHittersData(offset, limit)
+        .toPromise();
+      if (offset > 0) {
+        this.oracleData.items = this.oracleData.items.concat(this.tempData.items);
+      }
+      else {
+        this.oracleData = this.tempData;
+      }
+      offset += limit;
+    }
+
+  }
+
 }

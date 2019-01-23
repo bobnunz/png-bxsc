@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "png-bxsc", "png-bxsc.njsproj", "{9CF09D2F-07A4-4827-B61F-1EFC64DCF87A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CF09D2F-07A4-4827-B61F-1EFC64DCF87A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CF09D2F-07A4-4827-B61F-1EFC64DCF87A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CF09D2F-07A4-4827-B61F-1EFC64DCF87A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CF09D2F-07A4-4827-B61F-1EFC64DCF87A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56D3A90C-58C8-4371-BBF6-4EBFE75FEA43}
+	EndGlobalSection
+EndGlobal
