@@ -11,7 +11,7 @@ export class HittersComponent implements OnInit {
   limit: number = 500;
   playerType: string = 'H';
   columnDefs = [
-    { headerName: 'Player', field: 'player', rowDrag: true },
+    { headerName: 'Player', field: 'player', rowDrag: true, suppressMovable: true},
     { headerName: 'Team', field: 'team' },
     { headerName: 'Position', field: 'pos' },
     { headerName: 'Year', field: 'year' },
@@ -47,7 +47,7 @@ export class HittersComponent implements OnInit {
     { headerName: 'Tie Bid Flag', field: 'tie_bid' },
     { headerName: 'Owned Flag', field: 'owned' }
   ];
-  
+  defaultColDef = { resizable: true, sortable: true, filter: true };
  
   constructor() {
    

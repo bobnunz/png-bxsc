@@ -20,13 +20,13 @@ export class PlayerStatsComponent implements OnInit {
   @Input() limit: number;
   @Input() playerType: string;
   @Input() columnDefs: any[];
+  @Input() defaultColDef: any[];
   oracleData: PlayerData = new PlayerData;
   tempData: PlayerData = new PlayerData;
-  private defaultColDef;
-  private multiSortKey;
+   private multiSortKey;
 
   constructor(private hds: PlayersDataService) {
-    this.defaultColDef = { resizable: true, sortable: true, filter: true };
+
     this.multiSortKey = 'ctrl';
 
 
@@ -38,6 +38,7 @@ export class PlayerStatsComponent implements OnInit {
     let limit: number = this.limit;
     let playerType: string = this.playerType;
     let times: number = 0;
+  
 
     while (this.tempData.hasMore && times < 10) {
       times += 1;

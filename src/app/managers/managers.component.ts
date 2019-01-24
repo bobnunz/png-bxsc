@@ -10,11 +10,14 @@ export class ManagersComponent implements OnInit {
   limit: number = 500;
   playerType: string = 'M';
   columnDefs = [
-    { headerName: 'Player', field: 'player', rowDrag: true },
+    { headerName: 'Player', field: 'player', rowDrag: true, suppressMovable: true },
     { headerName: 'Team', field: 'team' },
     { headerName: 'Position', field: 'pos' },
     { headerName: 'Year', field: 'year' }
-  ];  constructor() { }
+  ];
+  defaultColDef = { resizable: true, sortable: true, filter: true };
+
+  constructor() { }
 
   ngOnInit() {
   }
