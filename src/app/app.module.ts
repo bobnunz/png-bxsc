@@ -10,6 +10,7 @@ import { AgGridModule } from 'ag-grid-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TabViewModule } from 'primeng/tabview';
+import { StatsModule } from './stats/stats.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TabViewModule } from 'primeng/tabview';
     AppRoutingModule,
     HttpClientModule,
     TabViewModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([]),
+    StatsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

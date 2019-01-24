@@ -1,26 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!-- Dummy comment-->
-
 <link rel="stylesheet" type="text/css" href="/node_modules/primeicons/primeicons.css" />
 <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/themes/nova-light/theme.css" />
 <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/primeng.min.css" />
 
 <p-tabView>
   <p-tabPanel header="Hitters">
-
-    <ag-grid-angular #agGrid
-                     style="width: 900px; height: 500px;"
-                     class="ag-theme-fresh"
-                     id="mygrid"
-                     [suppressHorizontalScroll]="false"
-                     [animateRows]="true"
-                     [multiSortKey]="multiSortKey"
-                     [rowData]="oracleData.items"
-                     [rowDragManaged]="true"
-                     [columnDefs]="columnDefs"
-                     [defaultColDef]="defaultColDef"
-                     rowSelection="multiple">
-    </ag-grid-angular>
-</p-tabPanel>
+    <app-hitters></app-hitters>
+  </p-tabPanel>
+  <p-tabPanel header="Pitchers">
+    <app-pitchers></app-pitchers>
+  </p-tabPanel>
+  <p-tabPanel header="Managers">
+    <app-managers></app-managers>
+  </p-tabPanel>
 </p-tabView>
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>
