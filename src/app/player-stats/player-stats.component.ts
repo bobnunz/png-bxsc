@@ -22,8 +22,6 @@ export class PlayerStatsComponent implements OnInit {
   @Input() columnDefs: any[];
   oracleData: PlayerData = new PlayerData;
   tempData: PlayerData = new PlayerData;
-  //oracleData: HitPlayer = new HitPlayer;
-  //tempData: HitPlayer = new HitPlayer;
   private defaultColDef;
   private multiSortKey;
 
@@ -40,8 +38,6 @@ export class PlayerStatsComponent implements OnInit {
     let limit: number = this.limit;
     let playerType: string = this.playerType;
     let times: number = 0;
-    //console.log('offset=' + offset + 'limit=' + limit);
-    //return;
 
     while (this.tempData.hasMore && times < 10) {
       times += 1;

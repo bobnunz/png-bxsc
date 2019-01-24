@@ -1,11 +1,4 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { AgGridNg2 } from 'ag-grid-angular';
-import { PlayerData } from '../Models/player-data';
-import { HitPlayer } from '../Models/hit-player';
-import { Hit } from '../Models/hit-player';
-import { PlayersDataService } from '../players-data.service';
-import { TabViewModule } from 'primeng/tabview';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hitters',
