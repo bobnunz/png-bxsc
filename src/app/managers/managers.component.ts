@@ -15,7 +15,7 @@ export class ManagersComponent implements OnInit {
     { headerName: 'Position', field: 'pos' },
     { headerName: 'Year', field: 'year' }
   ];
-  defaultColDef = { resizable: true, sortable: true, filter: true };
+  defaultColDef = { resizable: true, sortable: true, filter: true, editable: true };
 
   constructor() { }
 

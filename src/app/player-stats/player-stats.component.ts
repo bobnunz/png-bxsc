@@ -23,26 +23,34 @@ export class PlayerStatsComponent implements OnInit {
   @Input() defaultColDef: any[];
   oracleData: PlayerData = new PlayerData;
   tempData: PlayerData = new PlayerData;
-   private multiSortKey;
+  multiSortKey;
+  private gridApi;
+  private gridColumnApi;
+ 
+  
+
 
   constructor(private hds: PlayersDataService) {
-
+  
     this.multiSortKey = 'ctrl';
 
 
   }
 
-  async ngOnInit() {
+  async onGridReady(params) {
+
+    this.gridApi = params.api;
+    this.gridColumnApi = params.columnApi;
+
     this.tempData.hasMore = true;
     let offset: number = this.offset;
     let limit: number = this.limit;
     let playerType: string = this.playerType;
     let times: number = 0;
-  
 
-    while (this.tempData.hasMore && times < 10) {
+    while (this.tempData.hasMore && times < 1) {
       times += 1;
-      this.tempData = await this.hds.getAllPlayerData(playerType, offset, limit)
+      this.tempData = await this.hds.getAllPlayerData(this.playerType, this.offset, this.limit)
         .toPromise();
       if (offset > 0) {
         this.oracleData.items = this.oracleData.items.concat(this.tempData.items);
@@ -54,5 +62,9 @@ export class PlayerStatsComponent implements OnInit {
     }
 
   }
+
+  ngOnInit() {
+  }
+
 
 }
