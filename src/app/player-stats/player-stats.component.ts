@@ -5,6 +5,9 @@ import { AgGridNg2 } from 'ag-grid-angular';
 import { PlayerData } from '../Models/player-data';
 import { PlayersDataService } from '../players-data.service';
 import { TabViewModule } from 'primeng/tabview';
+import { element } from 'protractor';
+import { Element } from '@angular/compiler/src/render3/r3_ast';
+import { style } from '@angular/animations';
 
 @Component({
   selector: 'app-player-stats',
@@ -33,8 +36,7 @@ export class PlayerStatsComponent implements OnInit {
   constructor(private hds: PlayersDataService) {
   
     this.multiSortKey = 'ctrl';
-
-
+ 
   }
 
   async onGridReady(params) {
@@ -48,7 +50,7 @@ export class PlayerStatsComponent implements OnInit {
     let playerType: string = this.playerType;
     let times: number = 0;
 
-    while (this.tempData.hasMore && times < 1) {
+    while (this.tempData.hasMore && times < 10) {
       times += 1;
       this.tempData = await this.hds.getAllPlayerData(this.playerType, this.offset, this.limit)
         .toPromise();
@@ -60,6 +62,11 @@ export class PlayerStatsComponent implements OnInit {
       }
       offset += limit;
     }
+
+    let x = document.getElementById("mygrid").offsetHeight;
+    let y = screen.availHeight;
+    console.log(x+' '+y);
+    
 
   }
 

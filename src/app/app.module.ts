@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 
 import { TabViewModule } from 'primeng/tabview';
 import { StatsModule } from './stats/stats.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { StatsModule } from './stats/stats.module';
     FormsModule,
     AppRoutingModule,
     TabViewModule,
-    StatsModule
+    StatsModule,
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

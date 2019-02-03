@@ -15,8 +15,9 @@ export class AppComponent implements OnInit {
 }
    
   ngOnInit() {
- 
- 
+    let x = document.getElementById("mainTabs").offsetHeight;
+    console.log("material tabs height=" + x);
+
   }
 
 
