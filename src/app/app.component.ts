@@ -11,11 +11,13 @@ import { Component, OnInit} from '@angular/core';
 
 export class AppComponent implements OnInit {
 
+  mainTabsPxHeight: number;
   constructor (){
 }
    
   ngOnInit() {
-    let x = document.getElementById("mainTabs").offsetHeight;
+    this.mainTabsPxHeight = document.getElementById("mainTabs").offsetHeight;
+    let x = this.mainTabsPxHeight;
     console.log("material tabs height=" + x);
 
   }

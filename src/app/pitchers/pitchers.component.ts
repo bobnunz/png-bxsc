@@ -11,10 +11,10 @@ export class PitchersComponent implements OnInit {
   limit: number = 500;
   playerType: string = 'P';
   columnDefs = [
-    { headerName: 'Player', field: 'player', rowDrag: true, suppressMovable: true },
-    { headerName: 'Team', field: 'team' },
-    { headerName: 'Position', field: 'pos' },
-    { headerName: 'Year', field: 'year' }
+    { headerName: 'Player', field: 'player', rowDrag: true, suppressMovable: true, filter: "agTextColumnFilter" },
+    { headerName: 'Team', field: 'team', filter: "agTextColumnFilter" },
+    { headerName: 'Position', field: 'pos', filter: "agTextColumnFilter" },
+    { headerName: 'Year', field: 'year', filter: "agNumberColumnFilter" }
   ];
 
   defaultColDef = { resizable: true, sortable: true, filter: true };

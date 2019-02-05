@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/themes/nova-light/theme.css" />
 <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/primeng.min.css" />
 <!--
-<p-tabView >
+<p-tabView id="mainTabs">
   <p-tabPanel id="mpTabs" header="Hitters">
     <ng-template pTemplate="content">
       <app-hitters></app-hitters>
@@ -24,10 +24,36 @@
   </p-tabPanel>
 
 </p-tabView>
+
+
+<ngb-tabset >
+
+  <ngb-tab title="Hitters">
+    <ng-template ngbTabContent>
+      <app-hitters></app-hitters>
+    </ng-template>
+  </ngb-tab>
+  
+  <ngb-tab title="Pitchers">
+    <ng-template ngbTabContent>
+      <app-pitchers></app-pitchers>
+    </ng-template>
+  </ngb-tab>
+
+
+  <ngb-tab title="Managers">
+    <ng-template ngbTabContent>
+      <app-managers></app-managers>
+    </ng-template>
+  </ngb-tab>
+
+</ngb-tabset>
+
 -->
 
-<mat-tab-group id="mainTabs" style="width: 100vw; height: 100vh">
-  <mat-tab label="Hiters">
+<mat-tab-group id="mainTabs" style="width: 100%; height: 100%">
+
+  <mat-tab label="Hitters">
     <ng-template matTabContent>
       <app-hitters></app-hitters>
     </ng-template>
@@ -43,5 +69,8 @@
     </ng-template>
   </mat-tab>
 </mat-tab-group>
+
+
+
 
 <router-outlet></router-outlet>

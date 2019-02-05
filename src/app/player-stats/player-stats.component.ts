@@ -29,6 +29,8 @@ export class PlayerStatsComponent implements OnInit {
   multiSortKey;
   private gridApi;
   private gridColumnApi;
+  private heightPx: number;
+  styleHW: string;
  
   
 
@@ -36,13 +38,42 @@ export class PlayerStatsComponent implements OnInit {
   constructor(private hds: PlayersDataService) {
   
     this.multiSortKey = 'ctrl';
+    this.styleHW = "width: 100%; height: 774px";
  
   }
 
-  async onGridReady(params) {
+  onGridReady(params) {
 
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
+
+    this.heightPx = document.getElementById("mygrid").offsetHeight;
+    let x = this.heightPx;
+    let y = document.getElementById("mygrid").offsetWidth;
+    console.log('inside ongridready '+x+' '+y);
+    
+
+  }
+  saveToCsv() {
+    let params = {
+      skipHeader: true,
+      columnGroups: false,
+      skipFooters: true,
+      skipGroups: true,
+      skipPinnedTop: true,
+      skipPinnedBottom: true,
+      allColumns: true,
+      onlySelected: false,
+      suppressQuotes: false,
+      fileName: "nunz"
+     
+    };
+    console.log("inside export");
+    this.gridApi.exportDataAsCsv(params);
+
+  }
+
+  async ngOnInit() {
 
     this.tempData.hasMore = true;
     let offset: number = this.offset;
@@ -62,15 +93,14 @@ export class PlayerStatsComponent implements OnInit {
       }
       offset += limit;
     }
-
-    let x = document.getElementById("mygrid").offsetHeight;
-    let y = screen.availHeight;
-    console.log(x+' '+y);
-    
-
-  }
-
-  ngOnInit() {
+    /*
+    this.heightPx = document.getElementById("mainTabs").offsetHeight;
+    let x = this.heightPx;
+    let y = document.getElementById("mygrid").offsetWidth;
+    let gridSel = document.getElementById("mainTabs");
+    gridSel.setAttribute('height', '648px');
+    console.log('inside oninit '+x + ' ' + y);
+    */
   }
 
 
