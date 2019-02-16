@@ -4,6 +4,30 @@
 <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/themes/nova-light/theme.css" />
 <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/primeng.min.css" />
 <!--
+<div style="height: 100%; width: 100%;">
+  <p-tabView id="mainTabs">
+    <p-tabPanel id="mpTabs" header="Hitters">
+
+      <app-hitters></app-hitters>
+
+    </p-tabPanel>
+
+    <p-tabPanel header="Pitchers">
+
+      <p>this is the placeholder for pitchers</p>
+
+
+    </p-tabPanel>
+
+    <p-tabPanel header="Managers">
+
+      <p>this is the placeholder for managers</p>
+
+    </p-tabPanel>
+
+  </p-tabView>
+</div>
+
 <p-tabView id="mainTabs">
   <p-tabPanel id="mpTabs" header="Hitters">
     <ng-template pTemplate="content">
@@ -24,16 +48,16 @@
   </p-tabPanel>
 
 </p-tabView>
-
-
-<ngb-tabset >
+-->
+<!--
+ <ngb-tabset>
 
   <ngb-tab title="Hitters">
     <ng-template ngbTabContent>
       <app-hitters></app-hitters>
     </ng-template>
   </ngb-tab>
-  
+
   <ngb-tab title="Pitchers">
     <ng-template ngbTabContent>
       <app-pitchers></app-pitchers>
@@ -49,9 +73,9 @@
 
 </ngb-tabset>
 
--->
 
-<mat-tab-group id="mainTabs" style="width: 100%; height: 100%">
+-->
+<mat-tab-group animationDuration="0ms" id="mainTabs" style="height: 100%; width: 100%;">
 
   <mat-tab label="Hitters">
     <ng-template matTabContent>

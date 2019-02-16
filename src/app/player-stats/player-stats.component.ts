@@ -46,12 +46,12 @@ export class PlayerStatsComponent implements OnInit {
 
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
-
+/*
     this.heightPx = document.getElementById("mygrid").offsetHeight;
     let x = this.heightPx;
     let y = document.getElementById("mygrid").offsetWidth;
     console.log('inside ongridready '+x+' '+y);
-    
+  */  
 
   }
   saveToCsv() {
@@ -83,7 +83,7 @@ export class PlayerStatsComponent implements OnInit {
 
     while (this.tempData.hasMore && times < 10) {
       times += 1;
-      this.tempData = await this.hds.getAllPlayerData(this.playerType, this.offset, this.limit)
+      this.tempData = await this.hds.getAllPlayerData(this.playerType, offset, limit)
         .toPromise();
       if (offset > 0) {
         this.oracleData.items = this.oracleData.items.concat(this.tempData.items);
@@ -93,6 +93,7 @@ export class PlayerStatsComponent implements OnInit {
       }
       offset += limit;
     }
+
     /*
     this.heightPx = document.getElementById("mainTabs").offsetHeight;
     let x = this.heightPx;

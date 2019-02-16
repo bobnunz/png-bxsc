@@ -11,9 +11,9 @@ export class HittersComponent implements OnInit {
   limit: number = 500;
   playerType: string = 'H';
   columnDefs = [
-    { headerName: 'Player', field: 'player', rowDrag: true, suppressMovable: true},
-    { headerName: 'Team', field: 'team' },
-    { headerName: 'Position', field: 'pos' },
+    { headerName: 'Player', field: 'player', rowDrag: true, suppressMovable: true, filter: 'agTextColumnFilter'},
+    { headerName: 'Team', field: 'team', filter: 'agTextColumnFilter' },
+    { headerName: 'Position', field: 'pos', filter: 'agTextColumnFilter' },
     { headerName: 'Year', field: 'year' },
     { headerName: 'Rnd.Ord', field: 'rd' },
     { headerName: 'Games', field: 'games' },
@@ -47,7 +47,7 @@ export class HittersComponent implements OnInit {
     { headerName: 'Tie Bid Flag', field: 'tie_bid' },
     { headerName: 'Owned Flag', field: 'owned' }
   ];
-  defaultColDef = { resizable: true, sortable: true, filter: true };
+  defaultColDef = { resizable: true, sortable: true, filter: 'agNumberColumnFilter' };
  
   constructor() {
    

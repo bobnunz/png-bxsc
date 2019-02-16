@@ -1,23 +1,5 @@
-<!--
-<button mat-raised-button (click)="saveToCsv()"> Export </button>
 
-<button> example</button>
-
-  <mat-form-field>
-    <select matNativeControl required>
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
-    </select>
-  </mat-form-field>
-  <p>
-    this is it
-  </p>
-
-
--->
-<div style="height: 100%; padding-top: 117px; box-sizing: border-box;">
+<div style="height: 100%; padding-top: 35px; box-sizing: border-box;">
   <ag-grid-angular #agGrid
                    style="width: 100%; height: 100%"
                    [rowDragManaged]="true"
@@ -37,66 +19,20 @@
 <div style="position: absolute; top: 5px; left: 5px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 13px;">
   <div style="padding-bottom: 4px;">
     <!--
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
 
-    <input matInput placeholder="Filename" value="Players">
+      <input matInput placeholder="Filename" value="Players">
 
-    </mat-form-field>
-    </form>
-      -->
+      </mat-form-field>
+      </form>
+        -->
     <label> File Name: <input type="text" id="fileName" /> </label>
     <label style="margin-left: 20px;">
       Separator <input type="text" style="width: 20px;" id="columnSeparator" />
     </label>
     <label style="margin-left: 20px;"> <button (click)="onBtExport()">Export to CSV</button> </label>
   </div>
-
-  <table>
-    <tbody>
-      <tr>
-        <td valign="top">
-          <label style="margin-right: 20px;">
-            <mat-checkbox>Check me!</mat-checkbox>
-           
-          </label>
-          <br />
-          <label style="margin-right: 20px;">
-            <input type="checkbox" id="useSpecificColumns" /> Specify Columns
-          </label>
-          <br />
-          <label style="margin-right: 20px;"> <input type="checkbox" id="allColumns" /> All Columns </label> <br />
-          <label style="margin-right: 20px;"> <input type="checkbox" id="onlySelected" /> Only Selected </label>
-        </td>
-        <td valign="top">
-          <label style="margin-right: 20px;"> <input type="checkbox" id="customHeader" /> Custom Header </label>
-          <br />
-          <label style="margin-right: 20px;"> <input type="checkbox" id="customFooter" /> Custom Footer </label>
-          <br />
-          <label style="margin-right: 20px;"> <input type="checkbox" id="skipHeader" /> Skip Header </label> <br />
-          <label style="margin-right: 20px;"> <input type="checkbox" id="skipFooters" /> Skip Footers </label>
-        </td>
-        <td valign="top">
-          <label style="margin-right: 20px;">
-            <input type="checkbox" id="useCellCallback" /> Use Cell Callback
-          </label>
-          <br />
-          <label style="margin-right: 20px;"> <input type="checkbox" id="suppressQuotes" /> Suppress Quotes </label>
-          <br />
-          <label style="margin-right: 20px;"> <input type="checkbox" id="skipGroups" /> Skip Groups </label> <br />
-          <label style="margin-right: 20px;"> <input type="checkbox" id="skipGroupR" /> Skip Group R </label>
-        </td>
-        <td valign="top">
-          <label style="margin-right: 20px;"> <input type="checkbox" id="processHeaders" /> Format Headers </label>
-          <br />
-          <label style="margin-right: 20px;"> <input type="checkbox" id="skipPinnedTop" /> Skip Pinned Top </label>
-          <br />
-          <label style="margin-right: 20px;">
-            <input type="checkbox" id="skipPinnedBottom" /> Skip Pinned Bottom
-          </label>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  
 </div>
 
